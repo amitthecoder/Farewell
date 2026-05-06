@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farewell Party 2024 – Central University of Himachal Pradesh</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2089/2089789.png"/>
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>
+        <span class="icon"><i class="fa-solid fa-person-chalkboard"></i></span>
+        <span>Farewell Party 2024</span>
+      </h1>
+      <p class="university"><i class="fa-solid fa-school"></i> Central University of Himachal Pradesh</p>
+      <p class="department"><i class="fa-solid fa-leaf"></i> Dept. of Environmental Science</p>
+      <p class="date"><i class="fa-regular fa-calendar-days"></i> 16 May 2026</p>
+      <div class="countdown" id="countdown-timer">
+        <span><i class="fa-solid fa-hourglass-start"></i> Countdown: <span id="days"></span>d <span id="hours"></span>h <span id="minutes"></span>m <span id="seconds"></span>s</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="about-card">
+      <h2 class="fade-in"><i class="fa-solid fa-circle-info"></i> It's time to say goodbye...</h2>
+      <p>
+        Dear Students,<br/>
+        As you set foot on the next chapter of your journey, let’s celebrate the memories, laughter, and bonds we’ve shared. Join us for an unforgettable evening with your friends and teachers as we bid you a heartfelt farewell and wish you all the best for your bright future!
+      </p>
+    </section>
+
+    <section class="rsvp-section card">
+      <h2><i class="fa-solid fa-paper-plane"></i> RSVP / Availability</h2>
+      <form id="rsvp-form" autocomplete="off" novalidate>
+        <div class="form-group">
+          <label for="name"><i class="fa-solid fa-user"></i> Full Name*</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+          <span class="error" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="mobile"><i class="fa-solid fa-phone"></i> Mobile Number*</label>
+          <input type="tel" id="mobile" name="mobile" required maxlength="10" placeholder="10 digit mobile"/>
+          <span class="error" id="mobile-error"></span>
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-user-check"></i> Attendance Status*</label>
+          <div class="attendance-options">
+            <label><input type="radio" name="attendance" value="Coming" required /> Coming</label>
+            <label><input type="radio" name="attendance" value="Not Coming" /> Not Coming</label>
+          </div>
+          <span class="error" id="attendance-error"></span>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+        <div class="success-message" id="success-message"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <i class="fa-solid fa-leaf"></i> Department of Environmental Science | Session 2024–2026
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

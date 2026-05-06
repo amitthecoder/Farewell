@@ -1,0 +1,278 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f9fbfc;
+  color: #21242b;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gradient Hero with background */
+.hero {
+  position: relative;
+  min-height: 54vh;
+  background: linear-gradient(120deg, #358a67 0%, #7652e5 100%);
+  background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(68,68,68,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #152131b7 30%, #26204391 100%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-content .icon {
+  font-size: 2.2rem;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+
+.hero-content p {
+  margin: 0.2em 0;
+  font-weight: 500;
+  font-size: 1.13rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.countdown {
+  background: rgba(255,255,255,0.14);
+  margin-top: 1.3em;
+  padding: 0.6em 1.3em;
+  border-radius: 25px;
+  display: inline-block;
+  font-size: 1.15rem;
+  animation: fadeIn 0.8s;
+  box-shadow: 0 4px 25px rgba(100,60,255,0.09);
+}
+
+main {
+  flex: 1 0 auto;
+  margin-top: -3.7em;
+  z-index: 1;
+}
+
+.about-card {
+  margin: 2em auto 1.2em auto;
+  padding: 2rem 1.4rem 1rem 1.4rem;
+  max-width: 580px;
+  background: #fffdfa;
+  border-radius: 22px;
+  box-shadow: 0 4px 36px rgba(81,110,255, 0.09);
+  text-align: center;
+  animation: cardPop 0.8s;
+}
+
+.about-card h2 {
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  color: #355c81;
+}
+
+.about-card p {
+  font-size: 1.15em;
+  font-weight: 400;
+  margin: 0 0 0.3em 0;
+  color: #222b37;
+}
+
+
+.card, .rsvp-section {
+  max-width: 430px;
+  margin: 1.5em auto 2.5em auto;
+  background: #fafbffec;
+  border-radius: 20px;
+  box-shadow: 0 3px 23px rgba(120,77,255,.08);
+  padding: 2em 1.5em 1.5em 1.5em;
+  transition: box-shadow 0.2s;
+  animation: cardPop 0.95s;
+
+}
+.card:hover, .rsvp-section:hover {
+  box-shadow: 0 7px 40px rgba(120,63,255,.18);
+}
+
+/* RSVP Form */
+.rsvp-section h2 {
+  font-size: 1.25em;
+  color: #7652e5;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+#rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35em;
+  margin-top: 0.8em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  align-items: flex-start;
+  font-weight: 500;
+  color: #323344;
+}
+
+label {
+  font-size: 1.08em;
+  margin-bottom: 0.25em;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  padding: 0.52em .88em;
+  font-size: 1.08em;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 7px;
+  outline: none;
+  transition: border 0.17s;
+  margin-top: 0.07em;
+  width: 100%;
+}
+input:focus {
+  border-color: #7652e5;
+}
+
+.attendance-options {
+  margin: 0.4em 0 0 0.2em;
+  display: flex;
+  gap: 2.5em;
+}
+.attendance-options label {
+  font-weight: 400;
+  font-size: 1.01em;
+  display: flex;
+  gap: 0.35em;
+  align-items: center;
+}
+
+button.submit-btn {
+  margin-top: 0.9em;
+  background: linear-gradient(90deg,#358a67 40%,#7652e5 100%);
+  color: #fff;
+  padding: 0.68em 2.3em;
+  font-size: 1.13em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(120,82,254,.10);
+  cursor: pointer;
+  transition: background 0.18s,box-shadow 0.18s,transform 0.16s;
+  display: flex; align-items: center; gap: 0.7em;
+}
+
+button.submit-btn:hover {
+  background: linear-gradient(90deg,#7652e5 20%,#358a67 100%);
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 7px 32px rgba(120, 82, 254, 0.19);
+}
+
+.success-message {
+  display: none;
+  font-size: 1.09em;
+  margin-top: 1.2em;
+  color: #37b649;
+  text-align: center;
+  font-weight: 600;
+  animation: fadeIn 0.5s;
+}
+
+#rsvp-form.submitted .success-message {
+  display: block;
+}
+
+
+.error {
+  color: #d93141;
+  font-size: 0.94em;
+  height: 1em;
+  margin-top: 0.2em;
+  display: inline-block;
+}
+
+footer {
+  background: linear-gradient(90deg,#355c81 20%, #8d72e1 100%);
+  color: #fff;
+  padding: 1.19em 0 0.92em 0;
+  text-align: center;
+  font-size: 1.05em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-top: auto;
+  box-shadow: 0 -2px 14px rgba(134,110,255,0.09)
+}
+footer i {
+  color: #72fc97;
+  margin-right: 0.47em;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes cardPop {
+  from { opacity:0; transform: scale(.95) translateY(40px);}
+  to   { opacity:1; transform: scale(1) translateY(0);}
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+  .hero-content h1 { font-size: 2rem;}
+  main, .about-card, .card, .rsvp-section { padding: 1.1em 0.5em;}
+}
+
+@media (max-width: 430px) {
+  .about-card, .card, .rsvp-section { margin: 1em 0.3em; }
+  .hero-content p, .countdown { font-size: 1em; }
+}
+
+::-webkit-scrollbar { width: 10px; background: #e4e2f2;}
+::-webkit-scrollbar-thumb { background: #dacfff; border-radius: 8px;}
