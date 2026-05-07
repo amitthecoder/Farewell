@@ -52,10 +52,7 @@ form.addEventListener('submit', function(e) {
     valid = false;
   }
 
-  if (valid) {
-    form.classList.add('submitted');
-    successMessage.textContent = 'Submitting your RSVP...';
-  } else {
+  if (!valid) {
     e.preventDefault();
   }
 });
