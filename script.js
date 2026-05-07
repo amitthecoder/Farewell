@@ -48,7 +48,7 @@ form.addEventListener('submit', function(e) {
 
   // Validate roll number
   const rollNumberVal = rollNumberInput.value.trim();
-  if (!/^[a-zA-Z0-9-]{4,20}$/.test(rollNumberVal)) {
+  if (!rollNumberVal || !/^[a-zA-Z0-9-]{4,20}$/.test(rollNumberVal)) {
     rollNumberError.textContent = 'Enter a valid roll number (4-20 letters, numbers, or hyphen).';
     valid = false;
   }
