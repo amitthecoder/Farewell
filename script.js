@@ -24,11 +24,9 @@ countdown();
 // RSVP Form validation & submission
 const form = document.getElementById('rsvp-form');
 const nameInput = document.getElementById('name');
-const mobileInput = document.getElementById('mobile');
-const attendanceInputs = document.getElementsByName('attendance');
+const rollNumberInput = document.getElementById('roll-number');
 const nameError = document.getElementById('name-error');
-const mobileError = document.getElementById('mobile-error');
-const attendanceError = document.getElementById('attendance-error');
+const rollNumberError = document.getElementById('roll-number-error');
 const successMessage = document.getElementById('success-message');
 
 form.addEventListener('submit', function(e) {
@@ -37,8 +35,7 @@ form.addEventListener('submit', function(e) {
 
   // Reset error messages
   nameError.textContent = '';
-  mobileError.textContent = '';
-  attendanceError.textContent = '';
+  rollNumberError.textContent = '';
   successMessage.textContent = '';
   form.classList.remove('submitted');
 
@@ -49,20 +46,10 @@ form.addEventListener('submit', function(e) {
     valid = false;
   }
 
-  // Validate mobile (10 digits, numeric)
-  const mobVal = mobileInput.value.trim();
-  if (!mobVal || !/^\d{10}$/.test(mobVal)) {
-    mobileError.textContent = 'Enter a valid 10-digit mobile number.';
-    valid = false;
-  }
-
-  // Validate attendance
-  let attendanceVal = '';
-  for (let i = 0; i < attendanceInputs.length; i++) {
-    if (attendanceInputs[i].checked) attendanceVal = attendanceInputs[i].value;
-  }
-  if (!attendanceVal) {
-    attendanceError.textContent = 'Select your attendance status.';
+  // Validate roll number
+  const rollNumberVal = rollNumberInput.value.trim();
+  if (!rollNumberVal || rollNumberVal.length < 2) {
+    rollNumberError.textContent = 'Please enter your roll number.';
     valid = false;
   }
 
@@ -70,8 +57,7 @@ form.addEventListener('submit', function(e) {
     // Simulate saving (here: use localStorage as a demo)
     const entry = {
       name: nameVal,
-      mobile: mobVal,
-      attendance: attendanceVal,
+      rollNumber: rollNumberVal,
       ts: new Date().toISOString(),
     };
     let existing = [];
