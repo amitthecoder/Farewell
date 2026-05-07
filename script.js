@@ -30,7 +30,6 @@ const rollNumberError = document.getElementById('roll-number-error');
 const successMessage = document.getElementById('success-message');
 
 form.addEventListener('submit', function(e) {
-  e.preventDefault();
   let valid = true;
 
   // Reset error messages
@@ -54,27 +53,9 @@ form.addEventListener('submit', function(e) {
   }
 
   if (valid) {
-    // Simulate saving (here: use localStorage as a demo)
-    const entry = {
-      name: nameVal,
-      rollNumber: rollNumberVal,
-      ts: new Date().toISOString(),
-    };
-    let existing = [];
-    try {
-      existing = JSON.parse(localStorage.getItem('farewell_rsvp') || '[]');
-    } catch { existing = []; }
-    existing.push(entry);
-    localStorage.setItem('farewell_rsvp', JSON.stringify(existing));
-
-    // Show success, reset form
     form.classList.add('submitted');
-    successMessage.textContent = `Thank you, ${nameVal}! Your RSVP has been recorded.`;
-
-    form.reset();
-    setTimeout(() => {
-      form.classList.remove('submitted');
-      successMessage.textContent = '';
-    }, 7000);
+    successMessage.textContent = 'Submitting your RSVP...';
+  } else {
+    e.preventDefault();
   }
 });
