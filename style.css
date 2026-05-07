@@ -176,19 +176,6 @@ input:focus {
   border-color: #7652e5;
 }
 
-.attendance-options {
-  margin: 0.4em 0 0 0.2em;
-  display: flex;
-  gap: 2.5em;
-}
-.attendance-options label {
-  font-weight: 400;
-  font-size: 1.01em;
-  display: flex;
-  gap: 0.35em;
-  align-items: center;
-}
-
 button.submit-btn {
   margin-top: 0.9em;
   background: linear-gradient(90deg,#358a67 40%,#7652e5 100%);
