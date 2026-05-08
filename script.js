@@ -47,7 +47,7 @@ form.addEventListener('submit', function(e) {
 
   // Validate roll number
   const rollNumberVal = rollNumberInput.value.trim();
-  if (!/^\d{1,10}$/.test(rollNumberVal)) {
+  if (!rollNumberVal || !/^\d{1,10}$/.test(rollNumberVal)) {
     rollNumberError.textContent = 'Enter a valid roll number (1 to 10 digits).';
     valid = false;
   }
