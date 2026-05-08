@@ -47,8 +47,8 @@ form.addEventListener('submit', function(e) {
 
   // Validate roll number
   const rollNumberVal = rollNumberInput.value.trim();
-  if (!rollNumberVal || !/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{2,18})[a-zA-Z0-9]$/.test(rollNumberVal)) {
-    rollNumberError.textContent = 'Enter a valid roll number (4-20 letters, numbers, or hyphen).';
+  if (!/^\d{1,10}$/.test(rollNumberVal)) {
+    rollNumberError.textContent = 'Enter a valid roll number (1 to 10 digits).';
     valid = false;
   }
 
